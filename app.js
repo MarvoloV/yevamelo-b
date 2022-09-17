@@ -12,10 +12,10 @@ expressConfig(app);
 const PORT = process.env.PORT || config.PORT;
 // Start Server
 
-app.listen(PORT, () => {
+app.listen(PORT, '172.26.51.170', () => {
   connectDB();
   // Routes
-  routes();
+  routes(app);
   console.log(`Server running 🤖 at http://localhost:${PORT}/`);
 });
 

@@ -1,4 +1,7 @@
 const Joi = require('joi');
+const joiObjectId = require('joi-objectid');
+
+Joi.objectId = joiObjectId(Joi);
 
 const ParamsSchema = Joi.object({
   id: Joi.objectId().required(),

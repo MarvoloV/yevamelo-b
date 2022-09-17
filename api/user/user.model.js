@@ -6,6 +6,14 @@ const { Schema } = mongoose;
 
 const userSchema = new Schema(
   {
+    firstName: {
+      type: String,
+      required: true,
+    },
+    lastName: {
+      type: String,
+      required: true,
+    },
     email: {
       type: String,
       lowercase: true,
@@ -14,23 +22,23 @@ const userSchema = new Schema(
       index: true,
       trim: true,
     },
+    dni: {
+      type: String,
+      required: true,
+    },
+    store: {
+      type: String,
+      required: true,
+    },
+    cellphone: {
+      type: String,
+      required: true,
+    },
     password: {
       type: String,
       required: true,
       trim: true,
     },
-    registered: {
-      date: Date,
-      age: Number,
-    },
-    phone: String,
-    cell: String,
-    picture: {
-      large: String,
-      medium: String,
-      thumbnail: String,
-    },
-    nat: String,
     role: {
       type: String,
       default: 'user',

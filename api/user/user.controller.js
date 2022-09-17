@@ -25,19 +25,19 @@ async function getAllUsersHandler(req, res) {
 
 async function createUserHandler(req, res) {
   try {
-    const { username, email } = req.body;
+    const { email } = req.body;
     const matchUserEmail = await ValidateUserEmail(email);
     if (matchUserEmail) {
       return res.status(403).json({
         message: 'used email',
       });
     }
-    const matchUserName = await ValidateUserName(username);
-    if (matchUserName) {
-      return res.status(403).json({
-        message: 'used username',
-      });
-    }
+    // const matchUserName = await ValidateUserName(username);
+    // if (matchUserName) {
+    //   return res.status(403).json({
+    //     message: 'used username',
+    //   });
+    // }
     const newUser = {
       ...req.body,
     };
